@@ -1,0 +1,14 @@
+Проанализируй следующую заявку и верни карточку лида в формате JSON строго по схеме.
+
+### Входные данные:
+- source: {{source}}
+- received_at: {{received_at}}
+- known_client_name: {{known_client_name}}
+- known_contact: {{known_contact}}
+- language: {{language}}
+
+### Текст заявки:
+{{text}}
+
+### JSON Schema (строго соблюдай):
+{{schema}}
