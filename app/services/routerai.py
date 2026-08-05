@@ -24,11 +24,18 @@ class RouterAIClient:
         self.model = settings.MODEL_ID
         self.timeout = settings.REQUEST_TIMEOUT
         self.temperature = settings.TEMPERATURE
-        self.client = AsyncOpenAI(
-            api_key=settings.ROUTERAI_API_KEY,
-            base_url=settings.ROUTERAI_BASE_URL,
-            timeout=self.timeout,
-        )
+        self.api_key = (settings.ROUTERAI_API_KEY or "").strip()
+        self.base_url = settings.ROUTERAI_BASE_URL
+
+        if not self.api_key:
+            # Do not create client with empty key — we will raise a clean error later
+            self.client = None
+        else:
+            self.client = AsyncOpenAI(
+                api_key=self.api_key,
+                base_url=self.base_url,
+                timeout=self.timeout,
+            )
 
     async def chat(
         self,
@@ -38,6 +45,13 @@ class RouterAIClient:
         """
         Returns: (content, latency_ms, http_status, usage_dict)
         """
+        if not self.api_key or self.client is None:
+            raise RouterAIError(
+                "ROUTERAI_AUTH_ERROR",
+                "ROUTERAI_API_KEY is not set. Create .env file and put your key there.",
+                401,
+            )
+
         start = time.perf_counter()
         try:
             response = await self.client.chat.completions.create(

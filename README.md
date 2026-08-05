@@ -1,82 +1,92 @@
 # AI-классификатор клиентских заявок
 
-Сервис автоматической обработки входящих заявок на разработку сайтов, веб-сервисов, Telegram-ботов, AI-автоматизацию, интеграции и другие digital-услуги.
+Сервис автоматической обработки входящих заявок на разработку сайтов, веб-сервисов, Telegram-ботов, AI-автоматизацию и другие digital-услуги.
 
 Использует **Grok 4.20** от xAI через **RouterAI**. Возвращает структурированную карточку лида в формате JSON.
 
 ---
 
-## Возможности
+## Быстрый старт (с нуля)
 
-- Приём заявки через `POST /api/leads/classify`
-- Классификация услуги, типа проекта, бюджета, сроков, качества лида
-- Строгая защита от галлюцинаций (модель не придумывает данные)
-- Валидация ответа по JSON Schema + Pydantic
-- Автоматический повтор при невалидном ответе
-- Полное техническое логирование
-- Набор из 28+ тестовых кейсов + автоматический runner
-- Обработка ошибок RouterAI (auth, rate-limit, timeout и др.)
-
----
-
-## Быстрый старт
-
-### 1. Клонирование и установка
+### 1. Клонирование
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/konstantdenis22-debug/ai-lead-classifier.git
 cd ai-lead-classifier
+```
 
+### 2. Виртуальное окружение
+
+**Windows (PowerShell):**
+```powershell
 python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+.\.venv\Scripts\Activate.ps1
+```
+
+Если появляется ошибка про ExecutionPolicy:
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+```
+
+**Mac / Linux:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Установка зависимостей
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 2. Настройка окружения
+### 4. Настройка API-ключа (обязательно)
 
 ```bash
 cp .env.example .env
-# Отредактируйте .env и укажите ROUTERAI_API_KEY
 ```
 
-Получить ключ: [https://routerai.ru](https://routerai.ru) → Настройки → API-ключи.
+Откройте файл `.env` и вставьте свой ключ:
 
-Подтвердите точный идентификатор модели в личном кабинете RouterAI (по умолчанию `x-ai/grok-4.20`).
-
-### 3. Запуск сервиса
-
-```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```env
+ROUTERAI_API_KEY=ваш_реальный_ключ_от_преподавателя
 ```
 
-Документация: http://localhost:8000/docs
+Без ключа сервис вернёт ошибку `ROUTERAI_AUTH_ERROR` в стандартизированном формате.
 
-### 4. Пример запроса
+### 5. Запуск
 
 ```bash
-curl -X POST http://localhost:8000/api/leads/classify \
-  -H "Content-Type: application/json" \
-  -d '{
-    "text": "Добрый день. Нужен сайт для автосервиса: услуги, онлайн-запись, карта и отзывы. Бюджет около 200 тыс. руб. Хотим запуститься до сентября.",
-    "source": "telegram",
-    "received_at": "2026-08-03T10:00:00+03:00",
-    "known_client_name": null,
-    "known_contact": null,
-    "language": "ru"
-  }'
+python -m uvicorn app.main:app --reload --port 8000
 ```
 
-### 5. Запуск тестов
+Откройте в браузере: http://127.0.0.1:8000/docs
+
+### 6. Запуск тестов
 
 ```bash
-# С реальным API (нужен ключ)
 python tests/test_runner.py
-
-# Или через pytest
-pytest tests/ -v
 ```
 
-Отчёт сохраняется в `reports/test_report_*.json`.
+Отчёт появится в папке `reports/` (файлы `latest_report.json` и `test_report_*.json`).
+
+---
+
+## Пример запроса
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/leads/classify \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"text\": \"Добрый день. Нужен сайт для автосервиса: услуги, онлайн-запись, карта и отзывы. Бюджет около 200 тыс. руб. Хотим запуститься до сентября.\",
+    \"source\": \"telegram\",
+    \"received_at\": \"2026-08-03T10:00:00+03:00\",
+    \"known_client_name\": null,
+    \"known_contact\": null,
+    \"language\": \"ru\"
+  }"
+```
 
 ---
 
@@ -85,127 +95,73 @@ pytest tests/ -v
 ```
 ai-lead-classifier/
 ├── app/
-│   ├── main.py                 # FastAPI приложение
-│   ├── config.py               # Настройки из .env
+│   ├── main.py
+│   ├── config.py
 │   ├── schemas.py              # Pydantic + JSON Schema
 │   ├── prompts/
-│   │   ├── system_v1.0.0.txt   # Системный промпт
-│   │   └── user_template.txt   # Шаблон пользовательского промпта
+│   │   ├── system_v1.0.0.txt
+│   │   └── user_template.txt
 │   ├── services/
-│   │   ├── classifier.py       # Основная логика
-│   │   ├── routerai.py         # Клиент RouterAI
-│   │   └── logger.py           # Структурированные логи
-│   └── api/
-│       └── routes.py           # Endpoint
+│   │   ├── classifier.py
+│   │   ├── routerai.py
+│   │   └── logger.py
+│   └── api/routes.py
 ├── tests/
-│   ├── test_cases.json         # ≥25 тестовых заявок
-│   └── test_runner.py          # Автоматический runner + отчёт
-├── logs/                       # Технические логи (jsonl)
-├── reports/                    # Отчёты тестов
+│   ├── test_cases.json         # 28 кейсов
+│   └── test_runner.py          # Честный автоматический runner
+├── reports/                    # Сюда пишутся отчёты
+├── docs/
+│   └── example_success_response.json
 ├── .env.example
 ├── requirements.txt
+├── CHANGES.md
 └── README.md
 ```
 
 ---
 
-## Формат ответа (успех)
+## Формат ошибок (единый)
 
-```json
-{
-  "success": true,
-  "request_id": "uuid",
-  "model": "x-ai/grok-4.20",
-  "prompt_version": "v1.0.0",
-  "data": {
-    "request_summary": "...",
-    "service": "Корпоративный сайт",
-    "industry": "Автосервис",
-    "project_type": "Новый проект",
-    "required_features": ["Раздел услуг", "Форма онлайн-записи", "..."],
-    "integrations": [],
-    "budget_min_rub": 200000,
-    "budget_max_rub": 200000,
-    "deadline_text": "до сентября",
-    "deadline_date": null,
-    "urgency": "средняя",
-    "client_name": null,
-    "company_name": null,
-    "contact": "Telegram",
-    "contact_value": null,
-    "lead_quality": "горячий",
-    "missing_questions": ["..."],
-    "confidence": 0.91,
-    "needs_human_review": false
-  }
-}
-```
-
-## Формат ответа (ошибка)
+При любой ошибке (нет ключа, невалидный JSON, проблемы RouterAI и т.д.) возвращается:
 
 ```json
 {
   "success": false,
   "request_id": "uuid",
   "error": {
-    "code": "LLM_RESPONSE_VALIDATION_FAILED",
-    "message": "Не удалось получить корректную структурированную карточку заявки."
+    "code": "ROUTERAI_AUTH_ERROR",
+    "message": "..."
   }
 }
 ```
 
-Поддерживаемые коды ошибок:  
+Поддерживаемые коды:  
 `VALIDATION_ERROR`, `ROUTERAI_AUTH_ERROR`, `ROUTERAI_RATE_LIMIT`, `ROUTERAI_TIMEOUT`, `ROUTERAI_UNAVAILABLE`, `LLM_RESPONSE_INVALID_JSON`, `LLM_RESPONSE_VALIDATION_FAILED`, `INTERNAL_ERROR`.
 
 ---
 
-## Логирование
+## Повторяемость
 
-Каждый запрос записывается в `logs/processing.jsonl` со следующими полями:
-
-- `request_id`
-- `processed_at`
-- `source`
-- `text` (обрезанный)
-- `model`
-- `prompt_version`
-- `schema_version`
-- `api_latency_ms`
-- `http_status`
-- `retries`
-- `json_valid`
-- `status` (`success` / `error`)
-- `error`
-- `tokens` (если доступны)
-
-API-ключ и секреты **никогда** не логируются.
+В `tests/test_runner.py` есть проверка повторяемости: выбранные кейсы (TC-001, TC-002, TC-010) запускаются 3 раза. Результат записывается в отчёт в поле `repeatability`.
 
 ---
 
-## Критерии приёмки (автоматически проверяются)
+## Что сдаётся (п. 15 ТЗ)
 
-| Критерий                    | Требование                          |
-|----------------------------|-------------------------------------|
-| Модель                     | Grok 4.20 через RouterAI            |
-| JSON-валидность            | 100%                                |
-| Классификация услуги       | ≥ 85%                               |
-| Извлечение бюджета         | ≥ 90% (если указан явно)            |
-| Извлечение сроков          | ≥ 85% (если однозначно)             |
-| Выдуманные данные          | ≤ 1 случай на 25 тестов             |
-| Повторяемость              | Ключевые поля стабильны             |
-| Ошибки                     | Корректная обработка всех кодов     |
-| Безопасность               | Ключ не в репозитории и логах       |
-
----
-
-## Версии
-
-- **Промпт**: `v1.0.0`
-- **JSON Schema**: `v1.0.0`
-- **Сервис**: `1.0.0`
+- Ссылка на GitHub-репозиторий
+- Исходный код
+- `.env.example`
+- `README.md`
+- Системный промпт и шаблон пользовательского промпта
+- JSON Schema (в `app/schemas.py`)
+- Тестовый набор (28 кейсов)
+- Модуль автоматического тестирования
+- Отчёт по тестам (`reports/latest_report.json`)
+- Пример успешного ответа (`docs/example_success_response.json`)
+- Описание логов (в этом README и в коде логгера)
 
 ---
 
 ## Лицензия
 
-Учебный проект. Используйте свободно в рамках задания.
+Учебный проект.

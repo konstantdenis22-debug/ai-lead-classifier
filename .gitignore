@@ -29,7 +29,9 @@ wheels/
 # Logs & reports
 logs/*.jsonl
 logs/*.log
-reports/*.json
+reports/test_report_*.json
+!reports/latest_report.json
+!reports/README.md
 !reports/.gitkeep
 
 # IDE

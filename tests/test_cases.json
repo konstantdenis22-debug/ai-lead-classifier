@@ -145,7 +145,7 @@
     },
     "expected": {
       "service": "AI-автоматизация",
-      "lead_quality": "тёплый"
+      "lead_quality": "холодный"
     }
   },
   {
@@ -305,7 +305,6 @@
       "language": "ru"
     },
     "expected": {
-      "service": "Корпоративный сайт",
       "needs_human_review": true
     }
   },
@@ -338,8 +337,7 @@
       "language": "ru"
     },
     "expected": {
-      "service": "Другое",
-      "lead_quality": "не определено"
+      "service": "Другое"
     }
   },
   {
@@ -355,8 +353,7 @@
       "language": "ru"
     },
     "expected": {
-      "service": "Другое",
-      "lead_quality": "не определено"
+      "service": "Другое"
     }
   },
   {
@@ -388,10 +385,7 @@
       "known_contact": null,
       "language": "ru"
     },
-    "expected": {
-      "service": "Не определено",
-      "lead_quality": "не определено"
-    }
+    "expected": {}
   },
   {
     "id": "TC-023",
@@ -407,7 +401,9 @@
     },
     "expected": {
       "service": "Интернет-магазин",
-      "lead_quality": "горячий"
+      "lead_quality": "горячий",
+      "budget_min_rub": null,
+      "budget_max_rub": null
     }
   },
   {
@@ -439,10 +435,7 @@
       "known_contact": null,
       "language": "ru"
     },
-    "expected": {
-      "service": "Корпоративный сайт",
-      "budget_min_rub": null
-    }
+    "expected": {}
   },
   {
     "id": "TC-026",

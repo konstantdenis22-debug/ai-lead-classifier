@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "request_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "model": "x-ai/grok-4.20",
+  "prompt_version": "v1.0.0",
+  "data": {
+    "request_summary": "Разработка корпоративного сайта для автосервиса с разделами услуг, онлайн-записи, картой и отзывами.",
+    "service": "Корпоративный сайт",
+    "industry": "Автосервис",
+    "project_type": "Новый проект",
+    "required_features": [
+      "Раздел услуг",
+      "Форма онлайн-записи",
+      "Карта",
+      "Отзывы"
+    ],
+    "integrations": [],
+    "budget_min_rub": 200000,
+    "budget_max_rub": 200000,
+    "deadline_text": "до сентября",
+    "deadline_date": null,
+    "urgency": "средняя",
+    "client_name": null,
+    "company_name": null,
+    "contact": "Telegram",
+    "contact_value": null,
+    "lead_quality": "горячий",
+    "missing_questions": [
+      "Есть ли у компании логотип, фирменные цвета и готовые материалы?",
+      "Нужна ли интеграция с CRM или календарём онлайн-записи?",
+      "Сколько услуг и страниц планируется разместить на сайте?"
+    ],
+    "confidence": 0.91,
+    "needs_human_review": false
+  }
+}
