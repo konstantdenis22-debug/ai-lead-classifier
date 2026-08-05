@@ -1,43 +1,43 @@
 {
-  "generated_at": "2026-08-05T02:36:03.394506+00:00",
+  "generated_at": "2026-08-05T18:15:44.086910+00:00",
   "total_tests": 28,
-  "passed": 0,
-  "failed": 28,
-  "json_schema_valid_rate": 0.0,
-  "service_accuracy": 0.0,
-  "budget_accuracy": 0.0769,
-  "deadline_accuracy": 0.0,
-  "needs_human_review_accuracy": 0.0,
+  "passed": 28,
+  "failed": 0,
+  "json_schema_valid_rate": 1.0,
+  "service_accuracy": 1.0,
+  "budget_accuracy": 1.0,
+  "deadline_accuracy": 1.0,
+  "needs_human_review_accuracy": 1.0,
   "repeatability": {
     "TC-001": {
-      "stable": false,
-      "note": "not enough successful runs",
+      "stable": true,
+      "note": "",
       "runs_status": [
-        "fail",
-        "fail",
-        "fail"
+        "pass",
+        "pass",
+        "pass"
       ]
     },
     "TC-002": {
-      "stable": false,
-      "note": "not enough successful runs",
+      "stable": true,
+      "note": "",
       "runs_status": [
-        "fail",
-        "fail",
-        "fail"
+        "pass",
+        "pass",
+        "pass"
       ]
     },
     "TC-010": {
-      "stable": false,
-      "note": "not enough successful runs",
+      "stable": true,
+      "note": "",
       "runs_status": [
-        "fail",
-        "fail",
-        "fail"
+        "pass",
+        "pass",
+        "pass"
       ]
     }
   },
-  "average_response_time_ms": 3647.4,
+  "average_response_time_ms": 2674.4,
   "results": [
     {
       "id": "TC-001",
@@ -59,17 +59,39 @@
         "deadline_date": "2026-10-01",
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 4483.2,
+      "elapsed_ms": 3320.4,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен интернет-магазин косметики на ~300 товаров. Есть логотип и фото.",
+        "service": "Интернет-магазин",
+        "industry": "Косметика",
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 250000.0,
+        "budget_max_rub": 350000.0,
+        "deadline_text": "к 1 октября 2026",
+        "deadline_date": "2026-10-01",
+        "urgency": "средняя",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": "@cosmetic_boss",
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какая CMS предпочтительна (Tilda, WordPress, 1C-Bitrix, InSales и т.д.)?",
+          "Нужна ли интеграция с маркетплейсами или внешними сервисами (Яндекс.Маркет, Wildberries, СДЭК, платежные системы)?",
+          "Требуется ли личный кабинет, программа лояльности, фильтры по характеристикам?",
+          "Есть ли уже поставщики и каталог в Excel/1C?"
+        ],
+        "confidence": 0.9,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-002",
@@ -90,17 +112,44 @@
         "budget_max_rub": 200000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3747.7,
+      "elapsed_ms": 2259.3,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен сайт для автосервиса с услугами, онлайн-записью, картой и отзывами. Бюджет около 200 тыс. руб., запуск до сентября, готовы обсудить договор.",
+        "service": "Корпоративный сайт",
+        "industry": "Автосервис",
+        "project_type": "Новый проект",
+        "required_features": [
+          "услуги",
+          "онлайн-запись",
+          "карта",
+          "отзывы"
+        ],
+        "integrations": [],
+        "budget_min_rub": 200000.0,
+        "budget_max_rub": 200000.0,
+        "deadline_text": "до сентября",
+        "deadline_date": null,
+        "urgency": "высокая",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой функционал онлайн-записи требуется (интеграция с внешними сервисами, уведомления и т.д.)?",
+          "Есть ли существующий брендбук, логотип, фирменный стиль?",
+          "Нужна ли интеграция с CRM или другими системами?",
+          "Есть ли предпочтения по CMS?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-003",
@@ -120,17 +169,44 @@
         "budget_max_rub": 100000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3631.6,
+      "elapsed_ms": 2959.1,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен Telegram-бот для записи клиентов в барбершоп с интеграцией Google Calendar",
+        "service": "Telegram-бот",
+        "industry": "Барбершоп",
+        "project_type": "Новый проект",
+        "required_features": [
+          "Запись клиентов"
+        ],
+        "integrations": [
+          "Google Calendar"
+        ],
+        "budget_min_rub": 80000.0,
+        "budget_max_rub": 100000.0,
+        "deadline_text": "старт через 2 недели",
+        "deadline_date": null,
+        "urgency": "средняя",
+        "client_name": null,
+        "company_name": null,
+        "contact": "WhatsApp",
+        "contact_value": "+79991234567",
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Как именно должна работать запись клиентов (выбор мастера, времени, подтверждение)?",
+          "Есть ли уже существующий сайт или CRM барбершопа?",
+          "Нужны ли уведомления клиентам (SMS, Telegram)?",
+          "Какие роли пользователей в боте (админ, клиент)?",
+          "Есть ли требования к дизайну/брендингу бота?"
+        ],
+        "confidence": 0.9,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-004",
@@ -149,17 +225,39 @@
         "budget_max_rub": 500000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3673.2,
+      "elapsed_ms": 1975.2,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Автоматизация обработки заявок с сайта с помощью AI",
+        "service": "AI-автоматизация",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": 500000.0,
+        "deadline_text": "конец квартала",
+        "deadline_date": null,
+        "urgency": "средняя",
+        "client_name": "Иван",
+        "company_name": null,
+        "contact": "Email",
+        "contact_value": "ivan@company.ru",
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "С какого сайта приходят заявки (CMS, платформа)?",
+          "Какой объём заявок в день/месяц?",
+          "Какие именно этапы обработки заявок нужно автоматизировать?",
+          "Есть ли уже используемые инструменты или CRM?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-005",
@@ -180,17 +278,39 @@
         "deadline_date": "2026-09-15",
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3503.5,
+      "elapsed_ms": 2378.8,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Разработка лендинга для запуска нового курса по маркетингу",
+        "service": "Лендинг",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 120000.0,
+        "budget_max_rub": 120000.0,
+        "deadline_text": "к 15 сентября 2026",
+        "deadline_date": "2026-09-15",
+        "urgency": "высокая",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какие ключевые блоки и элементы должны быть на лендинге?",
+          "Есть ли готовый брендбук, логотип, текстовые материалы?",
+          "Нужна ли интеграция с платежными системами или CRM?",
+          "Есть ли референсы по дизайну?"
+        ],
+        "confidence": 0.95,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-006",
@@ -208,17 +328,40 @@
         "service": "Корпоративный сайт",
         "lead_quality": "тёплый"
       },
-      "elapsed_ms": 3847.3,
+      "elapsed_ms": 1872.8,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Хотим сделать сайт для нашей компании.",
+        "service": "Корпоративный сайт",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "тёплый",
+        "missing_questions": [
+          "Какой тип сайта нужен (корпоративный, лендинг, многостраничный)?",
+          "Есть ли у вас существующий сайт или это полностью новый проект?",
+          "Какой у вас бюджет на разработку?",
+          "В какой отрасли работает компания?",
+          "Есть ли предпочтительные сроки запуска?"
+        ],
+        "confidence": 0.6,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-007",
@@ -236,17 +379,39 @@
         "service": "Telegram-бот",
         "lead_quality": "тёплый"
       },
-      "elapsed_ms": 3506.4,
+      "elapsed_ms": 2094.4,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен бот в телеге для оповещений",
+        "service": "Telegram-бот",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "тёплый",
+        "missing_questions": [
+          "Какие именно события или условия должны вызывать оповещения?",
+          "Откуда бот должен получать данные для отправки уведомлений (API, база данных, внешний сервис)?",
+          "Есть ли требования к частоте и объёму уведомлений?",
+          "Нужна ли какая-то авторизация или персонализация уведомлений для разных пользователей?"
+        ],
+        "confidence": 0.75,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-008",
@@ -264,17 +429,39 @@
         "service": "AI-автоматизация",
         "lead_quality": "холодный"
       },
-      "elapsed_ms": 3853.1,
+      "elapsed_ms": 1992.2,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Интересует автоматизация с нейросетями. Можно подробнее?",
+        "service": "AI-автоматизация",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Email",
+        "contact_value": null,
+        "lead_quality": "холодный",
+        "missing_questions": [
+          "Какую именно задачу или процесс вы хотите автоматизировать с помощью нейросетей?",
+          "Есть ли уже какие-то инструменты, данные или системы, которые нужно интегрировать?",
+          "Какой у вас бюджет на такую автоматизацию (примерно)?",
+          "В какие сроки планируете реализовать проект?"
+        ],
+        "confidence": 0.65,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-009",
@@ -292,17 +479,40 @@
         "service": "Не определено",
         "lead_quality": "холодный"
       },
-      "elapsed_ms": 3609.1,
+      "elapsed_ms": 3280.6,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен сайт",
+        "service": "Не определено",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "холодный",
+        "missing_questions": [
+          "Какой именно тип сайта вам нужен (лендинг, корпоративный сайт, интернет-магазин, веб-сервис)?",
+          "Есть ли у вас предпочтения по дизайну, функционалу или примерам сайтов?",
+          "Какой у вас бюджет на разработку?",
+          "В какие сроки планируете запустить проект?",
+          "Расскажите подробнее о вашем бизнесе и задачах, которые должен решать сайт"
+        ],
+        "confidence": 0.3,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-010",
@@ -322,17 +532,41 @@
         "budget_max_rub": 150000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3730.9,
+      "elapsed_ms": 3209.7,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужно создать сайт для кафе с меню и картой",
+        "service": "Корпоративный сайт",
+        "industry": "Кафе/Общепит",
+        "project_type": "Новый проект",
+        "required_features": [
+          "меню",
+          "карта"
+        ],
+        "integrations": [],
+        "budget_min_rub": 150000.0,
+        "budget_max_rub": 150000.0,
+        "deadline_text": "на следующий месяц",
+        "deadline_date": null,
+        "urgency": "средняя",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой стиль и дизайн сайта предпочитаете?",
+          "Нужно ли добавить онлайн-бронирование столиков?",
+          "Есть ли уже брендбук или референсы по дизайну?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-011",
@@ -351,17 +585,42 @@
         "budget_max_rub": 200000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3478.9,
+      "elapsed_ms": 3133.4,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Создать интернет-магазин на 50 товаров с корзиной и оплатой",
+        "service": "Интернет-магазин",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [
+          "корзина",
+          "оплата"
+        ],
+        "integrations": [],
+        "budget_min_rub": 200000.0,
+        "budget_max_rub": 200000.0,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой тематики магазин (какие товары)?",
+          "Нужна ли интеграция с конкретными платежными системами?",
+          "Есть ли требования к дизайну или CMS?",
+          "Есть ли уже брендбук или референсы?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-012",
@@ -380,17 +639,42 @@
         "budget_max_rub": 70000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3806.0,
+      "elapsed_ms": 2965.9,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен Telegram-бот для рассылки с интеграцией с CRM, срочно, бюджет до 70к",
+        "service": "Telegram-бот",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [
+          "Рассылка"
+        ],
+        "integrations": [
+          "CRM"
+        ],
+        "budget_min_rub": null,
+        "budget_max_rub": 70000.0,
+        "deadline_text": "срочно",
+        "deadline_date": null,
+        "urgency": "высокая",
+        "client_name": null,
+        "company_name": null,
+        "contact": "WhatsApp",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какая именно CRM используется?",
+          "Какой объём и частота рассылок планируется?",
+          "Есть ли готовое ТЗ или описание сценариев работы бота?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-013",
@@ -410,17 +694,39 @@
         "budget_max_rub": 400000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3539.0,
+      "elapsed_ms": 3634.8,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен корпоративный сайт и Telegram-бот для поддержки клиентов. Общий бюджет 400к, срок 2 месяца.",
+        "service": "Корпоративный сайт",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 400000.0,
+        "budget_max_rub": 400000.0,
+        "deadline_text": "2 месяца",
+        "deadline_date": null,
+        "urgency": "средняя",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Email",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой функционал должен быть на корпоративном сайте?",
+          "Какие именно функции должен выполнять Telegram-бот для поддержки клиентов?",
+          "Есть ли существующий брендбук, логотип, тексты или референсы по дизайну?",
+          "Какая отрасль/сфера деятельности компании?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-014",
@@ -440,17 +746,41 @@
         "budget_max_rub": 800000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3590.4,
+      "elapsed_ms": 3177.7,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Разработка интернет-магазина одежды с добавлением AI-рекомендаций товаров.",
+        "service": "Интернет-магазин",
+        "industry": "Одежда",
+        "project_type": "Новый проект",
+        "required_features": [
+          "AI-рекомендации товаров"
+        ],
+        "integrations": [],
+        "budget_min_rub": 600000.0,
+        "budget_max_rub": 800000.0,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой функционал должен быть в самом интернет-магазине?",
+          "Есть ли уже готовый дизайн или брендбук?",
+          "Нужна ли интеграция с платежными системами, CRM, 1С или маркетплейсами?",
+          "Какие именно сценарии AI-рекомендаций требуются?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-015",
@@ -468,17 +798,43 @@
         "service": "Парсер / сбор данных",
         "lead_quality": "тёплый"
       },
-      "elapsed_ms": 3643.1,
+      "elapsed_ms": 2983.2,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен парсер конкурентов и интеграция данных в CRM через API.",
+        "service": "Парсер / сбор данных",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [
+          "Парсер конкурентов"
+        ],
+        "integrations": [
+          "CRM через API"
+        ],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "тёплый",
+        "missing_questions": [
+          "Какой именно тип данных нужно собирать с конкурентов?",
+          "Какая CRM используется и есть ли документация по её API?",
+          "Есть ли примеры сайтов конкурентов?",
+          "В каком объёме и с какой периодичностью должен работать парсер?"
+        ],
+        "confidence": 0.75,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-016",
@@ -496,17 +852,39 @@
         "service": "Интернет-магазин",
         "needs_human_review": true
       },
-      "elapsed_ms": 3487.5,
+      "elapsed_ms": 4161.9,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен полноценный интернет-магазин на 1000 товаров с бюджетом 50 тысяч рублей (желательно бесплатно).",
+        "service": "Интернет-магазин",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 50000.0,
+        "budget_max_rub": 50000.0,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой ассортимент товаров планируется (категории)?",
+          "Нужна ли интеграция с платежными системами, CRM, 1С?",
+          "Есть ли уже готовый дизайн или требования к нему?",
+          "Есть ли предпочтения по CMS (Tilda, WordPress, самописный и т.д.)?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-017",
@@ -523,17 +901,39 @@
       "expected": {
         "needs_human_review": true
       },
-      "elapsed_ms": 3681.8,
+      "elapsed_ms": 2893.2,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Срочно нужен сайт с запуском только через год. Бюджет 300к.",
+        "service": "Не определено",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 300000.0,
+        "budget_max_rub": 300000.0,
+        "deadline_text": "через год",
+        "deadline_date": null,
+        "urgency": "высокая",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Email",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой именно тип сайта нужен (лендинг, корпоративный, интернет-магазин и т.д.)?",
+          "Какие основные функции и разделы должны быть на сайте?",
+          "Есть ли уже брендбук, логотип, референсы по дизайну?",
+          "Когда именно планируете начать работу?"
+        ],
+        "confidence": 0.65,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-018",
@@ -550,17 +950,39 @@
       "expected": {
         "needs_human_review": true
       },
-      "elapsed_ms": 3508.9,
+      "elapsed_ms": 2897.0,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен новый сайт с нуля с одновременной доработкой существующего интернет-магазина. Бюджет 200к.",
+        "service": "Интернет-магазин",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 200000.0,
+        "budget_max_rub": 200000.0,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "WhatsApp",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой именно функционал должен быть на новом сайте?",
+          "Что конкретно нужно доработать в существующем интернет-магазине?",
+          "Есть ли референсы или примеры сайтов, которые нравятся?",
+          "Какой у вас сейчас стек технологий в существующем магазине?"
+        ],
+        "confidence": 0.65,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-019",
@@ -577,17 +999,39 @@
       "expected": {
         "service": "Другое"
       },
-      "elapsed_ms": 3660.5,
+      "elapsed_ms": 2572.9,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Поиск бригады для ремонта квартиры в Москве с бюджетом 1.5 млн рублей.",
+        "service": "Другое",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 1500000.0,
+        "budget_max_rub": 1500000.0,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой именно ремонт нужен (черновой, чистовой, полный)?",
+          "Какова площадь квартиры и в каком районе Москвы?",
+          "Есть ли уже проект/дизайн-проект или нужен дизайн?",
+          "В какие сроки необходимо выполнить работы?"
+        ],
+        "confidence": 0.9,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-020",
@@ -604,17 +1048,39 @@
       "expected": {
         "service": "Другое"
       },
-      "elapsed_ms": 3516.0,
+      "elapsed_ms": 3233.9,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Продаю Toyota Camry 2020, цена 2.1 млн. Звоните.",
+        "service": "Другое",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Телефон",
+        "contact_value": null,
+        "lead_quality": "не определено",
+        "missing_questions": [
+          "Какой именно digital-продукт вам нужен (сайт, бот, автоматизация и т.д.)?",
+          "Есть ли у вас бюджет на разработку?",
+          "В какие сроки планируете реализовать проект?",
+          "Можете подробнее описать задачу?"
+        ],
+        "confidence": 0.9,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-021",
@@ -632,17 +1098,39 @@
         "service": "Не определено",
         "lead_quality": "не определено"
       },
-      "elapsed_ms": 3523.4,
+      "elapsed_ms": 1866.3,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Бессмысленный набор символов и цифр",
+        "service": "Не определено",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "не определено",
+        "missing_questions": [
+          "Что именно вам нужно разработать или автоматизировать?",
+          "Есть ли у вас конкретная задача или проект?",
+          "Какой бюджет вы планируете?",
+          "В какие сроки нужно выполнить работу?"
+        ],
+        "confidence": 0.9,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-022",
@@ -657,17 +1145,34 @@
         "language": "ru"
       },
       "expected": {},
-      "elapsed_ms": 3677.2,
+      "elapsed_ms": 1738.1,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Спам-реклама заработка в интернете без вложений с призывом перейти по ссылке и получать 100к в день",
+        "service": "Другое",
+        "industry": null,
+        "project_type": "Не определено",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "не определено",
+        "missing_questions": [],
+        "confidence": 0.9,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-023",
@@ -687,17 +1192,39 @@
         "budget_min_rub": null,
         "budget_max_rub": null
       },
-      "elapsed_ms": 3594.5,
+      "elapsed_ms": 2545.5,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен онлайн-магазин электроники на ~500 товаров.",
+        "service": "Интернет-магазин",
+        "industry": "Электроника",
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": "launch by October 2026",
+        "deadline_date": "2026-10-31",
+        "urgency": "средняя",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Email",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой CMS или технологический стек предпочтителен (WooCommerce, Shopify, custom и т.д.)?",
+          "Нужна ли интеграция с платежными системами и какими именно?",
+          "Есть ли уже поставщики, каталог в Excel/1C или нужно будет делать импорт товаров?",
+          "Требуется ли многоязычность или специфические функции (фильтры, сравнение товаров и т.п.)?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-024",
@@ -715,17 +1242,39 @@
         "service": "Telegram-бот",
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3535.8,
+      "elapsed_ms": 2122.5,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Поиск Telegram-бота для поддержки клиентов.",
+        "service": "Telegram-бот",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой функционал должен быть у бота (автоответы, тикеты, интеграция с CRM и т.д.)?",
+          "Сколько примерно обращений в день ожидается?",
+          "Есть ли предпочтения по технологиям или готовые API для интеграции?",
+          "Нужна ли админ-панель для управления ботом?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-025",
@@ -740,17 +1289,40 @@
         "language": "ru"
       },
       "expected": {},
-      "elapsed_ms": 3628.9,
+      "elapsed_ms": 1991.0,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Нужен обычный сайт для компании.",
+        "service": "Не определено",
+        "industry": null,
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Telegram",
+        "contact_value": null,
+        "lead_quality": "тёплый",
+        "missing_questions": [
+          "Какой именно тип сайта нужен (лендинг, корпоративный сайт, многостраничник)?",
+          "Есть ли у вас брендбук, логотип, референсы по дизайну?",
+          "Какой основной функционал должен быть на сайте?",
+          "Есть ли предпочтения по CMS или технологиям?",
+          "Какой бюджет и сроки реализации?"
+        ],
+        "confidence": 0.6,
+        "needs_human_review": true
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-026",
@@ -771,17 +1343,42 @@
         "budget_max_rub": 90000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3714.7,
+      "elapsed_ms": 1986.1,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Доработать текущий сайт: добавить форму заявки и интеграцию с Bitrix24",
+        "service": "Поддержка / доработка",
+        "industry": null,
+        "project_type": "Доработка существующего проекта",
+        "required_features": [
+          "форма заявки"
+        ],
+        "integrations": [
+          "Bitrix24"
+        ],
+        "budget_min_rub": 90000.0,
+        "budget_max_rub": 90000.0,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Какой функционал должна выполнять форма заявки?",
+          "Есть ли доступ к исходному коду и админке сайта?",
+          "Есть ли уже настроенная интеграция с Bitrix24 или нужно настроить с нуля?"
+        ],
+        "confidence": 0.9,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-027",
@@ -800,17 +1397,39 @@
         "project_type": "Консультация",
         "lead_quality": "тёплый"
       },
-      "elapsed_ms": 3437.3,
+      "elapsed_ms": 2898.2,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Консультация по выбору стека технологий для веб-сервиса",
+        "service": "Консультация",
+        "industry": null,
+        "project_type": "Консультация",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": null,
+        "budget_max_rub": null,
+        "deadline_text": null,
+        "deadline_date": null,
+        "urgency": "не определено",
+        "client_name": null,
+        "company_name": null,
+        "contact": "Email",
+        "contact_value": null,
+        "lead_quality": "тёплый",
+        "missing_questions": [
+          "Какой именно функционал должен выполнять веб-сервис?",
+          "Есть ли уже какие-то предварительные идеи по технологиям или ограничения?",
+          "В каком масштабе планируется проект (количество пользователей, нагрузка)?",
+          "Когда планируете начать разработку?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     },
     {
       "id": "TC-028",
@@ -830,17 +1449,38 @@
         "budget_max_rub": 1500000,
         "lead_quality": "горячий"
       },
-      "elapsed_ms": 3517.8,
+      "elapsed_ms": 2739.8,
       "model": "x-ai/grok-4.20",
       "prompt_version": "v1.0.0",
-      "success": false,
-      "status": "fail",
-      "actual": null,
+      "success": true,
+      "status": "pass",
+      "actual": {
+        "request_summary": "Разработка мобильного приложения для доставки еды на iOS и Android.",
+        "service": "Мобильное приложение",
+        "industry": "Доставка еды",
+        "project_type": "Новый проект",
+        "required_features": [],
+        "integrations": [],
+        "budget_min_rub": 1200000.0,
+        "budget_max_rub": 1500000.0,
+        "deadline_text": "старт в сентябре",
+        "deadline_date": null,
+        "urgency": "средняя",
+        "client_name": null,
+        "company_name": null,
+        "contact": null,
+        "contact_value": null,
+        "lead_quality": "горячий",
+        "missing_questions": [
+          "Есть ли уже готовый дизайн или брендбук?",
+          "Какие ключевые функции должны быть в приложении (каталог, корзина, оплата, трекинг курьера и т.д.)?",
+          "Нужна ли интеграция с конкретными сервисами (платежи, карты, CRM)?"
+        ],
+        "confidence": 0.85,
+        "needs_human_review": false
+      },
       "diffs": [],
-      "error": {
-        "code": "ROUTERAI_RATE_LIMIT",
-        "message": "Error code: 429 - {'error': 'API key monthly spending limit exceeded: 40,23 руб. / 40,00 руб.'}"
-      }
+      "error": null
     }
   ]
 }
